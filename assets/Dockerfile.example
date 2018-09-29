@@ -1,0 +1,15 @@
+FROM node:10-alphine
+
+
+# Create directories
+RUN mkdir /usr/src/app
+WORKDIR /usr/src/appe
+
+
+# Install dependencies
+COPY package.json /usr/src/app/package.json
+RUN npm install
+RUN npm react-scripts -g
+
+# Run npm 
+CMD ["npm", "start"]
