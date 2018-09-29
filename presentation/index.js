@@ -38,6 +38,7 @@ const images = {
   me: require('../assets/profile.jpg'),
   success: require('../assets/success.png'),
   heroku: require('../assets/heroku-card.png'),
+  hack: require('../assets/g0vhkhack.png'),
 };
 
 export default class Presentation extends React.Component {
@@ -150,13 +151,55 @@ export default class Presentation extends React.Component {
           <Image src={images.success} />
         </Slide>
 
-        <Slide bgColor="tertiarya" textColor="primary">
+        <Slide bgColor="tertiary" textColor="primary">
           <Heading size={6} lineHeight={1} textColor="quaternary">
             Publishing your docker image with heroku
           </Heading><br/>
           <Image src={images.heroku}/>
         </Slide>
- 
+         <Slide bgColor="tertiary" textColor="primary">
+          <Heading size={6} lineHeight={1} textColor="quaternary">
+             Install heroku command line
+          </Heading><br/>
+          <div>
+          <Code textColor="primary">
+            brew install heroku/brew/heroku
+          </Code>
+          </div>
+          <br/>And then login<br/><br/>
+          <Code textColor="primary">
+            heroku login
+          </Code>
+
+        </Slide>
+          <Slide bgColor="tertiary" textColor="primary">
+          <Heading size={6} lineHeight={1} textColor="quaternary">
+            Push & Release !
+          </Heading><br/>
+          <div>
+          Pushing image to repository<br/><br/>
+          <Code textColor="primary">
+             heroku container:push -a sitcon2018 web
+          </Code>
+          </div>
+          <br/>And deploying the image<br/><br/>
+          <Code textColor="primary">
+            heroku container:release -a sitcon2018 web
+          </Code>
+
+        </Slide>
+        <Slide>
+          <Text textColor="secondary">
+            <a href="https://bit.ly/g0vhk2ndhack">https://bit.ly/g0vhk2ndhack</a>
+          </Text>
+          <Image src={images.hack} />
+        </Slide>
+        <Slide bgColor="tertiary" textColor="primary">
+          <Heading size={1} lineHeight={1} textColor="primary">
+            Done ! Question ?
+          </Heading>
+        </Slide>
+
       </Deck>
     );
   }
